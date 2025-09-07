@@ -1,0 +1,11 @@
+services:
+  sparklab:
+    image: jupyter/pyspark-notebook:latest
+    container_name: sparklab
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    volumes:
+      - ./data:/home/jovyan/data
+      - ./notebooks:/home/jovyan/work
+    restart: unless-stopped
